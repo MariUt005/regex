@@ -4,10 +4,16 @@ include("connect_db.php");
 session_start();
 
 // проверяем, что сессия существует
-$q_check_session = "SELECT `hash` FROM `sessions` WHERE `hash`='". $mysqli->real_escape_string($_SESSION['h']) ."';";
+$q_check_session = "SELECT * FROM `sessions` WHERE `hash`='". $mysqli->real_escape_string($_SESSION['h']) ."';";
 $result = $mysqli->query($q_check_session);
 $result = $result->fetch_array();
 if (! $result) {
+    header('Location: /regex/signin.php');
+}
+
+if ( ! password_verify($_SESSION['nm']."-".$result['time'], $result['hash'])) {
+    unset($_SESSION['nm']);
+    unset($_SESSION['h']);
     header('Location: /regex/signin.php');
 }
 
@@ -20,7 +26,7 @@ $status = 0;
 $task = 'Choose level!';
 $text = '';
 $regex = '';
-$task_num = '';
+$task_num = '0';
 $result = '';
 // проверяем, не отправлена ли регулярка на проверку
 if (array_key_exists('run', $_POST)) {

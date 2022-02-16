@@ -4,10 +4,17 @@ include("connect_db.php");
 session_start();
 
 // проверяем, что сессия существует
-$q_check_session = "SELECT `hash` FROM `sessions` WHERE `hash`='". $mysqli->real_escape_string($_SESSION['h']) ."';";
+$q_check_session = "SELECT * FROM `sessions` WHERE `hash`='". $mysqli->real_escape_string($_SESSION['h']) ."';";
 $result = $mysqli->query($q_check_session);
 $result = $result->fetch_array();
 if (! $result) {
+    header('Location: /regex/signin.php');
+}
+
+
+if ( ! password_verify($_SESSION['nm']."-".$result['time'], $result['hash'])) {
+    unset($_SESSION['nm']);
+    unset($_SESSION['h']);
     header('Location: /regex/signin.php');
 }
 
@@ -238,7 +245,7 @@ if (array_key_exists('change_password', $_POST)) {
                 </div>
             </div>
             <div class="set_container regex_set">
-                
+
             </div>
         </div>
     </div>

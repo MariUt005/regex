@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 13, 2022 at 06:57 PM
+-- Generation Time: Feb 16, 2022 at 08:27 PM
 -- Server version: 10.6.5-MariaDB
 -- PHP Version: 8.1.2
 
@@ -30,7 +30,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `coolhackers` (
   `id` int(11) NOT NULL,
   `name` char(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `pass` char(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `pass` char(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -56,6 +57,13 @@ CREATE TABLE `sessions` (
   `hash` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `time` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `sessions`
+--
+
+INSERT INTO `sessions` (`id`, `hash`, `time`) VALUES
+(105, '$2y$10$2fPZk4wpsIo30ibknZ8OxuwikksiB0KlnfI1pNxthe6Zm.HaBS1Fa', 1645040833);
 
 -- --------------------------------------------------------
 
@@ -117,19 +125,19 @@ ALTER TABLE `tasks`
 -- AUTO_INCREMENT for table `coolhackers`
 --
 ALTER TABLE `coolhackers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `coolhackers_tasks`
 --
 ALTER TABLE `coolhackers_tasks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `sessions`
 --
 ALTER TABLE `sessions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 
 --
 -- AUTO_INCREMENT for table `tasks`
