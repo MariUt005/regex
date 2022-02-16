@@ -1,0 +1,36 @@
+div.set_block {
+    margin-bottom: 15px;
+}
+
+div.set_block p {
+    font-size: 25px;
+    text-decoration: underline;
+}
+
+div.set_block form {
+    margin-left: 30px;
+}
+
+div.set_block input {
+    margin: 10px;
+    height: 30px;
+    width: 256px;
+    padding: 10px;
+    background-color: #f6faf5;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #091414;
+    outline: 0;
+}
+
+div.set_block input[type=submit] {
+    margin: 10px;
+    background-color: #00db6a;
+    color: #091414;
+    height: 33px;
+    width: 99px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    padding: 5px;
+}

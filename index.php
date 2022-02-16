@@ -78,15 +78,15 @@ if (array_key_exists('n', $_GET)) {
         // скрыть выпадающее юзер-меню после загрузки страницы
         $(document).ready(
             function () {
-                $('div[class=usermenu]').hide();
+                $('div.usermenu').hide();
             }
         );
         // показать/скрыть выпыдающее юзер-меню после нажатия на никнейм
         $(document).ready(
             function () {
-                $('span[class=nickname').click(
+                $('span.nickname').click(
                     function () {
-                        $('div[class=usermenu]').toggle();
+                        $('div.usermenu').toggle();
                     }
                 );
             }
@@ -108,7 +108,7 @@ if (array_key_exists('n', $_GET)) {
         $(document).ready(
             function () {
                 var solved_tasks = <?php echo $solved_tasks; ?>;
-                $('a.lvl').each(
+                $('a.sidemenu').each(
                     function () {
                         if ($(this).text().slice(9) == <?php echo $task_num; ?>) {
                             if (solved_tasks.indexOf(Number($(this).text().slice(9))) != -1 ) {
@@ -157,23 +157,23 @@ if (array_key_exists('n', $_GET)) {
         </div>
         <div class="usermenu">
             <a href="#" class="usermenu">> create lvl</a><br>
-            <a href="#" class="usermenu">> settings</a><br>
+            <a href="settings.php" class="usermenu">> settings</a><br>
             <a href="signout.php" class="usermenu">> sign out</a>
         </div>
     </div>
     <div class="container">
-        <div class="levels">
-            <p class="lvl">Levels</p>
-            <a href='index.php?n=0' class="lvl">--> Lvl #0</a><br>
-            <a href='index.php?n=1' class="lvl">--> Lvl #1</a><br>
-            <a href='index.php?n=2' class="lvl">--> Lvl #2</a><br>
-            <a href='index.php?n=3' class="lvl">--> Lvl #3</a><br>
-            <a href='index.php?n=4' class="lvl">--> Lvl #4</a><br>
-            <a href='#' class="lvl">--> Lvl #5</a><br>
-            <a href='#' class="lvl">--> Lvl #6</a><br>
-            <a href='#' class="lvl">--> Lvl #7</a><br>
-            <a href='#' class="lvl">--> Lvl #8</a><br>
-            <a href='#' class="lvl">--> Lvl #9</a><br>
+        <div class="sidebar">
+            <p class="sidemenu">Levels</p>
+            <a href='index.php?n=0' class="sidemenu">--> Lvl #0</a><br>
+            <a href='index.php?n=1' class="sidemenu">--> Lvl #1</a><br>
+            <a href='index.php?n=2' class="sidemenu">--> Lvl #2</a><br>
+            <a href='index.php?n=3' class="sidemenu">--> Lvl #3</a><br>
+            <a href='index.php?n=4' class="sidemenu">--> Lvl #4</a><br>
+            <a href='#' class="sidemenu">--> Lvl #5</a><br>
+            <a href='#' class="sidemenu">--> Lvl #6</a><br>
+            <a href='#' class="sidemenu">--> Lvl #7</a><br>
+            <a href='#' class="sidemenu">--> Lvl #8</a><br>
+            <a href='#' class="sidemenu">--> Lvl #9</a><br>
         </div>
         <div class="data">
             <div class="task">

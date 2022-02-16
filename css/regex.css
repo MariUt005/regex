@@ -33,7 +33,7 @@ ul {
 	height: calc(100% - 214px);
 }
 
-.levels {
+.sidebar {
 	border-right: 2px solid #00db6a;;
 	height: 100%;
 	width: 200px;
@@ -106,12 +106,13 @@ a.usermenu {
 	color: #091414;
 }
 
-p.lvl {
+p.sidemenu {
 	margin: 15px;
 	font-size: 25px;
+	text-decoration: underline;
 }
 
-a.lvl {
+a.sidemenu {
 	margin-left: 15px;
 	font-size: 25px;
 	text-decoration: none;
