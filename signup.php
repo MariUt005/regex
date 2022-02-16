@@ -7,7 +7,7 @@ if (array_key_exists("h", $_SESSION)) {
     $result = $mysqli->query($q_check_session);
     $result = $result->fetch_array();
     if ($result) {
-        header('Location: /regex/index.php?n=0');
+        header('Location: index.php?n=0');
     }
 }
 

@@ -7,7 +7,7 @@ if (array_key_exists("h", $_SESSION)) {
     $result = $mysqli->query($q_check_session);
     $result = $result->fetch_array();
     if ($result) {
-        header('Location: /regex/index.php');
+        header('Location: index.php');
     }
 }
 
@@ -35,7 +35,7 @@ if (array_key_exists("nm", $_POST)) {
 
             $q_auth = "INSERT INTO `sessions`(`hash`, `time`) VALUES ('". $mysqli->real_escape_string($hash)."','". $mysqli->real_escape_string($t) ."')";
             $result = $mysqli->query($q_auth);
-            header('Location: /regex/index.php?n=0');
+            header('Location: index.php?n=0');
         } else {
             $status = $code_pass_incorrect;
         }

@@ -9,6 +9,6 @@ if (isset($_SESSION['nm'])) {
 if (isset($_SESSION['h'])) {
     unset($_SESSION['h']);
 }
-header('Location: /regex/signin.php');
+header('Location: signin.php');
 ?>
 
