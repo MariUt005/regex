@@ -68,7 +68,7 @@ if (array_key_exists("nm", $_POST)) {
             alert("Passwords not same!");
         } else if (<?php echo $status; ?> == <?php echo $code_sign_up_success; ?>) {
             alert("Success!");
-            location.href ='http://192.168.43.77/regex/index.php';
+            location.href ='index.php?n=0';
         }
     </script>
 </head>
